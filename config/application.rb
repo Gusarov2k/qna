@@ -15,5 +15,18 @@ module Qna
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    #my genaration for generation rspeci on first genaration
+    config.generator do |g|
+    	g.test_framework 	:rspec,
+    						fixtures: true,
+    						view_spec: false,
+    						helper_specs: false,
+    						routing_specs: false,
+    						request_specs: false,
+    						controller_spec: true
+    	g.fixture_replacement :factory_girl, dir: 'spec/factories'
+    	
+    end
   end
 end
